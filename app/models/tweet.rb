@@ -4,4 +4,12 @@ class Tweet < ApplicationRecord
   
   belongs_to :user
   has_one_attached :image
+
+  with_options presence: true do
+    validates :image
+    validates :spot, length: { maximum: 16 }
+    validates :comment
+    validates :advice
+    validates :area, numericality: { other_than: 1 }
+  end
 end

@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: Tabisaki_production
-  username: Tabisaki
-  password: <%= ENV['TABISAKI_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock

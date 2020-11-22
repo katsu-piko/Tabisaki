@@ -10,6 +10,6 @@ class Tweet < ApplicationRecord
     validates :spot, length: { maximum: 16 }
     validates :comment
     validates :advice
-    validates :area, numericality: { other_than: 1 }
+    validates :area_id, numericality: { other_than: 1 }
   end
 end

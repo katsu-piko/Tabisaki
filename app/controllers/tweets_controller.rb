@@ -23,9 +23,7 @@ class TweetsController < ApplicationController
   end
 
   def edit
-    unless current_user.id == @tweet.user_id
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.id == @tweet.user_id
   end
 
   def update
@@ -37,15 +35,13 @@ class TweetsController < ApplicationController
   end
 
   def destroy
-    if @tweet.destroy
-      redirect_to root_path
-    end
+    redirect_to root_path if @tweet.destroy
   end
 
   private
 
   def tweet_params
-    params.require(:tweet).permit(:image, :spot, :comment, :advice, :area_id ).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:image, :spot, :comment, :advice, :area_id).merge(user_id: current_user.id)
   end
 
   def set_tweet

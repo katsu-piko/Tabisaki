@@ -1,7 +1,7 @@
 class Tweet < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :area
-  
+
   belongs_to :user
   has_one_attached :image
 

@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :set_tweet, only: [:show, :edit, :update]
   def index
     @tweets = Tweet.all.order('created_at DESC')
   end
@@ -17,7 +18,17 @@ class TweetsController < ApplicationController
   end
 
   def show
-    @tweet = Tweet.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @tweet.update(tweet_params)
+      redirect_to tweet_path(@tweet.id)
+    else
+      render :edit
+    end
   end
 
   private
@@ -26,4 +37,7 @@ class TweetsController < ApplicationController
     params.require(:tweet).permit(:image, :spot, :comment, :advice, :area_id ).merge(user_id: current_user.id)
   end
 
+  def set_tweet
+    @tweet = Tweet.find(params[:id])
+  end
 end

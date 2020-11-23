@@ -1,5 +1,7 @@
 class TweetsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+
   def index
     @tweets = Tweet.all.order('created_at DESC')
   end
@@ -21,6 +23,9 @@ class TweetsController < ApplicationController
   end
 
   def edit
+    unless current_user.id == @tweet.user_id
+      redirect_to root_path
+    end
   end
 
   def update

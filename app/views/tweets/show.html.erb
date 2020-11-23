@@ -1,0 +1,33 @@
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+      <p class="prototype__hedding">
+        <%= @tweet.spot%>
+      </p>
+      <%= link_to "by #{@tweet.user.nickname}", root_path, class: :prototype__user %>
+      <% if @tweet.user_id == current_user.id %>
+        <div class="prototype__manage">
+          <%= link_to "編集する", root_path, class: :prototype__btn %>
+          <%= link_to "削除する", root_path, class: :prototype__btn %>
+        </div>
+      <% end %>
+      <div class="prototype__image">
+        <%= image_tag @tweet.image %>
+      </div>
+      <div class="prototype__body">
+        <div class="prototype__detail">
+          <p class="detail__title">コメント</p>
+          <p class="detail__message">
+            <%= @tweet.comment %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">アドバイス</p>
+          <p class="detail__message">
+            <%= @tweet.advice %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

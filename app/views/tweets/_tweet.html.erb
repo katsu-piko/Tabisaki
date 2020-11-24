@@ -3,6 +3,6 @@
   <div class="card__body">
     <%= link_to tweet.spot, tweet_path(tweet.id), class: :card__title%>
 
-    <%= link_to "by #{tweet.user.nickname}", tweet_path(tweet.id), class: :card__user %>
+    <%= link_to "by #{tweet.user.nickname}", user_path(tweet.user_id), class: :card__user %>
   </div>
 </div>

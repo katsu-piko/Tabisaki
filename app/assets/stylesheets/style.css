@@ -94,7 +94,10 @@ a {
 
 /* フォーム周り */
 .form__box {
-  padding: 100px;
+  padding: 200px;
+}
+.form__box_login {
+  padding: 200px 200px 300px;
 }
 .form__wrapper{
   outline: solid 2px white;
@@ -103,7 +106,7 @@ a {
   align-items: flex-start;
   justify-content: center;
 }
-.new_user{
+.new_user, .login_user{
   padding-top: 20px;
 }
 .field label {

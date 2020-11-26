@@ -1,22 +1,13 @@
 <div class="main">
   <div class="inner">
-    <div class="user__wrapper">
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの情報"%>
-      </h2>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th class="table__col1">ユーザー名</th>
-            <td class="table__col2"><%= @user.nickname %></td>
-          </tr>
-        </tbody>
-      </table>
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの投稿"%>
-      </h2>
-      <div class="user__card">
-        <%= render partial: 'tweets/tweet', collection: @user.tweets %>
+    <div class="form__user">
+      <div class="user__wrapper">
+        <h2 class="page-heading">
+          <%= "#{@user.nickname}さんの投稿"%>
+        </h2>
+        <div class="user__card">
+          <%= render partial: 'tweets/tweet', collection: @user.tweets %>
+        </div>
       </div>
     </div>
   </div>

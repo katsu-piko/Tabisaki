@@ -170,9 +170,10 @@ a {
   color: #00ecff;
 }
 .card__wrapper {
+  padding-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   min-height: calc(100vh - 161px);
 }
@@ -185,9 +186,16 @@ a {
 }
 .card__title {
   display: block;
+  color: #00ecff;
   font-size: 20px;
   margin-bottom: 8px;
   font-weight: bold;
+}
+.card__area{
+  display: block;
+  color: #00ecff;
+  font-size: 15px;
+
 }
 .card__summary {
   font-size: 16px;
@@ -195,7 +203,7 @@ a {
 .card__user {
   display: block;
   font-size: 12px;
-  color: #999;
+  color: #00ecff;
   text-align: right;
   text-decoration: underline;
 }
@@ -276,34 +284,21 @@ a {
 }
 
 /* ユーザーページ */
+.form__user{
+  padding: 170px 50px 250px;
+}
 .user__wrapper{
-  min-height: calc(100vh - 161px);
-}
-.table{
-  border-collapse: collapse;
-  margin-bottom: 32px;
-  width: 50%;
-}
-.table__col1{
-  text-align: left;
-  font-weight: bold;
-  background: #fafafa;
-  border-collapse: collapse;
-  border: 1px solid #f5f5f5;
-  width: 30%;
-  padding: 8px;
-}
-.table__col2{
-  text-align: left;
-  border: 1px solid #f5f5f5;
-  border-collapse: collapse;
-  width: 70%;
-  padding: 16px 8px;
+  outline: solid 2px white;
+  padding: 10px 50px;
+  display: block;
+  align-items: flex-start;
+  justify-content: center;
 }
 .user__card {
+  padding-top: 30px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 /* フッター */
@@ -331,7 +326,7 @@ a {
     width: 48%;
     margin-bottom: 40px;
   }
-  .prototype_image{
+  .tweet_image{
     width: 60%;
   }
 }
@@ -351,7 +346,7 @@ a {
   .card__summary {
     font-size: 14px;
   }
-  .prototype_image{
+  .tweet_image{
     width: 100%;
   }
   .table{

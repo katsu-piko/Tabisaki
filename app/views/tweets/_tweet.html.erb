@@ -1,8 +1,8 @@
 <div class="card">
   <%= link_to image_tag( tweet.image, class: :card__img ), tweet_path(tweet.id)%>
   <div class="card__body">
-    <%= link_to tweet.spot, tweet_path(tweet.id), class: :card__title%>
-
-    <%= link_to "by #{tweet.user.nickname}", user_path(tweet.user_id), class: :card__user %>
+    <%= link_to "< #{tweet.spot} >", tweet_path(tweet.id), class: :card__title%>
+    <%= link_to "( #{tweet.area.name} )", tweet_path(tweet.id), class: :card__area%>
+    <%= link_to "投稿者： #{tweet.user.nickname}", user_path(tweet.user_id), class: :card__user %>
   </div>
 </div>

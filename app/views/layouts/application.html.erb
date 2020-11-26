@@ -19,7 +19,7 @@
           <% if user_signed_in? %>
             <div class="nav__right"> 
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "#{current_user.nickname}さん", root_path, class: :nav__logout %>
+              <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: :nav__logout %>
               <%= link_to "New Tweet", new_tweet_path, class: :nav__btn %>
             </div>
           <% else %>
@@ -33,7 +33,7 @@
     </header>
     <%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © TABISAKI All rights reserved.</p>
+      <p class="copyright">TABISAKI.</p>
     </footer>
   </body>
 </html>

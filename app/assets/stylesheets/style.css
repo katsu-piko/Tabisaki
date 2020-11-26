@@ -18,6 +18,8 @@ div {
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #3b4043;
+  width:100%;
+  height:100%;
 }
 
 li {
@@ -37,10 +39,15 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #f1f8fe;
-  margin-bottom: 48px;
-  padding: 20px 0;
-
+  background-color: #ddffff;
+  filter:alpha(opacity=50);
+  opacity: 0.9;
+  padding-top: 15px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 60px;
 }
 .inner {
   width: 1024px;
@@ -51,30 +58,33 @@ a {
   display: flex;
   justify-content: space-between;
 }
-.logo {
-  width: 200px;
+.home__tag {
+  font-weight: bold;
+  font-size: 25px;
+  font-family: Vonk Regular;
+  color: #00ecff;
 }
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #00ecff;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #00ecff solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
   color: #fff;
-  background: #87CEFA;
+  background: #00ecff;
 }
 
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #00ecff;
   text-decoration: none;
   user-select: none;
 }
@@ -83,16 +93,39 @@ a {
 }
 
 /* フォーム周り */
-.form__wrapper{
-  min-height: calc(100vh - 161px);
+.form__box {
+  padding: 200px;
 }
-
-.form__text {
-  width: 50%;
+.form__box_login {
+  padding: 200px 200px 300px;
+}
+.form__box_tweet {
+  padding: 120px 200px 60px;
+}
+.form__wrapper{
+  outline: solid 2px white;
+  padding: 10px 50px;
+  display: block;
+  align-items: flex-start;
+  justify-content: center;
+}
+.new_user, .login_user{
+  padding-top: 20px;
+}
+.field label {
+  color: #00ecff;
 }
 
 .field{
   margin: 10px 0;
+}
+.spot__text{
+  height: 30px;
+  width: 50%;
+}
+.form__text{
+  height: 100px;
+  width: 100%;
 }
 
 .actions{
@@ -119,21 +152,28 @@ a {
 }
 
 /* メイン */
+.main {
+  background-color: #ddffff;
+}
+.top-image {
+  background-image: url("maldives.jpg");
+  background-size: cover;
+}
+.top-image h1 {
+  color: white;
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 1.0);
+  padding: 150px ;
+}
 
-.greeting{
-  margin-bottom: 20px;
-}
-.greeting__link{
-  text-decoration: underline;
-}
 .page-heading {
   font-size: 30px;
-  margin-bottom: 28px;
+  color: #00ecff;
 }
 .card__wrapper {
+  padding-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   min-height: calc(100vh - 161px);
 }
@@ -146,9 +186,16 @@ a {
 }
 .card__title {
   display: block;
+  color: #00ecff;
   font-size: 20px;
   margin-bottom: 8px;
   font-weight: bold;
+}
+.card__area{
+  display: block;
+  color: #00ecff;
+  font-size: 15px;
+
 }
 .card__summary {
   font-size: 16px;
@@ -156,125 +203,113 @@ a {
 .card__user {
   display: block;
   font-size: 12px;
-  color: #999;
+  color: #00ecff;
   text-align: right;
   text-decoration: underline;
 }
 
 /* 詳細ページ */
-.prototype__wrapper{
-  min-height: calc(100vh - 161px);
+.form__tweet{
+  padding: 120px 100px 60px;
 }
-.prototype__hedding{
+.tweet__wrapper{
+  outline: solid 2px white;
+  padding: 10px 50px;
+  display: block;
+  align-items: flex-start;
+  justify-content: center;
+}
+.tweet__hedding{
   font-size: 24px;
   font-weight: bold;
+  font-family: sans-serif;
+  color: #00ecff;
   text-align: center;
 }
-.prototype__user{
+.tweet__area{
+  font-family: sans-serif;
+  color: #00ecff;
+  text-align: center;
+}
+.tweet__user{
   display: block;
   font-size: 16px;
-  color: #999;
+  color: #00ecff;
   text-align: center;
   text-decoration: underline;
 }
-.prototype__image{
-  width: 40%;
+.tweet__image{
+  width: 100%;
   margin: 0 auto;
   padding: 16px 0;
 }
-.prototype__detail{
+.tweet__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .detail__title{
+  color: #00ecff;
   font-size: 20px;
   font-weight: bold;
 }
-.prototype__manage{
+.detail__message{
+  width: 80%;
+  height: 150px;
+  background-color: #ddffff;
+  border: 2px solid #00ecff;
+  border-radius: 4px;
+}
+.tweet__manage{
+  padding-bottom: 10px;
   display: flex;
   justify-content: center;
-  padding-top: 16px;
 }
-.prototype__btn{
+.tweet__btn{
   display: block;
-  padding: 0.4em 1.6em;
-  font-size: 0.4em;
-  color: #999;
+  padding: 0.6em 2.0em;
+  font-size: 0.8em;
+  color: #00ecff;
   text-decoration: none;
   user-select: none;
-  border: 1px #999 solid;
+  border: 1px #00ecff solid;
   border-radius: 3px;
   transition: 0.4s ease;
   margin: 0 4px;
 }
-.prototype__btn:hover{
-  color: #fff;
-  background: #999;
-}
-
-.prototype__comments{
-  background-color: #f6f6f6;
-  padding: 20px;
-  margin: 28px 0 40px 0;
-}
-
-.comments_lists{
-  padding-left: 20px;
-}
-
-.comments_list{
-  list-style-type: square;
-  padding-bottom: 5px;
-}
-
-.comment_user{
-  font-size: 16px;
-  color: #999;
-  text-decoration: underline;
+.tweet__btn:hover{
+  color: white;
+  background: #00ecff;
 }
 
 /* ユーザーページ */
+.form__user{
+  padding: 170px 50px 250px;
+}
 .user__wrapper{
-  min-height: calc(100vh - 161px);
-}
-.table{
-  border-collapse: collapse;
-  margin-bottom: 32px;
-  width: 50%;
-}
-.table__col1{
-  text-align: left;
-  font-weight: bold;
-  background: #fafafa;
-  border-collapse: collapse;
-  border: 1px solid #f5f5f5;
-  width: 30%;
-  padding: 8px;
-}
-.table__col2{
-  text-align: left;
-  border: 1px solid #f5f5f5;
-  border-collapse: collapse;
-  width: 70%;
-  padding: 16px 8px;
+  outline: solid 2px white;
+  padding: 10px 50px;
+  display: block;
+  align-items: flex-start;
+  justify-content: center;
 }
 .user__card {
+  padding-top: 30px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 /* フッター */
 
 .footer {
-  background-color: #999;
+  background-color: #ddffff;
   padding: 10px 0;
 }
 .copyright {
   text-align: center;
-  color: #fff;
+  color: #00ffff;
   font-size: 10px;
 }
 
@@ -291,16 +326,13 @@ a {
     width: 48%;
     margin-bottom: 40px;
   }
-  .prototype_image{
+  .tweet_image{
     width: 60%;
   }
 }
 
  /* スマホ表示 */
 @media (max-width: 599px) {
-  .logo {
-    width: 120px;
-  }
   .page-heading {
     font-size: 20px;
   }
@@ -314,7 +346,7 @@ a {
   .card__summary {
     font-size: 14px;
   }
-  .prototype_image{
+  .tweet_image{
     width: 100%;
   }
   .table{

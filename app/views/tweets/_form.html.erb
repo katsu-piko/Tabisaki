@@ -8,7 +8,7 @@
 
   <div class="field">
     <%= f.label :spot, "スポット名(16文字以内)" %><br />
-    <%= f.text_field :spot %>
+    <%= f.text_field :spot, class: :spot__text %>
   </div>
 
   <div class="field">
@@ -21,11 +21,11 @@
     <%= f.text_area :advice, class: :form__text %>
   </div>
 
-  <div class="filed">
+  <div class="field">
     <%= f.label :area_id, "エリア" %><br />
-    <%= f.collection_select(:area_id, Area.all, :id, :name, {}) %>
+    <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"spot__text"}) %>
   </div>
-  
+
   <div class="actions">
     <%= f.submit "投稿する", class: :form__btn  %>
   </div>

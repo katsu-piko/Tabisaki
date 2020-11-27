@@ -156,7 +156,7 @@ a {
   background-color: #ddffff;
 }
 .top-image {
-  background-image: url(/assets/maldives.jpg);
+  background-image: url("maldives.jpg");
   background-size: cover;
   background-position: top center;
   padding: 5vh 15vw;

@@ -1,0 +1,52 @@
+<main class="main">
+	<div class="top-image">
+		<h1>継承される旅の思い出</h1>
+	</div>
+  <div class="inner">
+    <div class="card__wrapper">
+      <ul class="area_list">
+        <li class="list">
+          <%= link_to image_tag( "/images/hokkaido.jpg", class: :area__img ), "#"%>
+          <%= link_to  '北海道', "#", class: "area_title" %>
+        </li>
+        <li class="list">
+          <%= link_to image_tag( "/images/tohoku.jpg", class: :area__img ), "#"%>
+          <%= link_to  '東北', "#", class: "area_title" %>
+        </li>
+        <li class="list">
+          <%= link_to image_tag( "/images/kanto.jpg", class: :area__img ), "#"%>
+          <%= link_to  '関東', "#", class: "area_title" %>
+        </li>
+      </ul>
+      <ul class="area_list">
+        <li class="list">
+          <%= link_to image_tag( "/images/kanazawa.jpg", class: :area__img ), "#"%>
+          <%= link_to  '中部東海・北陸', "#", class: "area_title" %>
+        </li>
+        <li class="list">
+          <%= link_to image_tag( "/images/osaka.jpg", class: :area__img ), "#"%>
+          <%= link_to  '近畿', "#", class: "area_title" %>
+        </li>
+        <li class="list">
+          <%= link_to image_tag( "/images/hiroshima.jpg", class: :area__img ), "#"%>
+          <%= link_to  '中国・四国', "#", class: "area_title" %>
+        </li>
+      </ul>
+      <ul class="area_list">
+        <li class="list">
+          <%= link_to image_tag( "/images/kyusyu.jpg", class: :area__img ), "#"%>
+          <%= link_to  '九州', "#", class: "area_title" %>
+        </li>
+        <li class="list">
+          <%= link_to image_tag( "/images/okinawa.jpg", class: :area__img ), "#"%>
+          <%= link_to  '沖縄', "#", class: "area_title" %>
+        </li>
+        <li class="list">
+          <%= link_to image_tag( "/images/singapore.jpg", class: :area__img ), "#"%>
+          <%= link_to  '海外', "#", class: "area_title" %>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</main>

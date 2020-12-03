@@ -24,7 +24,7 @@ RSpec.describe Tweet, type: :model do
           expect(@tweet.errors.full_messages).to include("Spot can't be blank")
         end
         it 'spotが16文字以上では投稿できないこと' do
-          @tweet.spot = "とうきょうとえどとうきょうはくぶつかん"
+          @tweet.spot = 'とうきょうとえどとうきょうはくぶつかん'
           @tweet.valid?
           expect(@tweet.errors.full_messages).to include('Spot is too long (maximum is 16 characters)')
         end
@@ -41,12 +41,12 @@ RSpec.describe Tweet, type: :model do
         it 'area_idが空では投稿できないこと' do
           @tweet.area_id = nil
           @tweet.valid?
-          expect(@tweet.errors.full_messages).to include("Area can't be blank", "Area is not a number")
+          expect(@tweet.errors.full_messages).to include("Area can't be blank", 'Area is not a number')
         end
         it 'area_idが1では投稿できないこと' do
           @tweet.area_id = 1
           @tweet.valid?
-          expect(@tweet.errors.full_messages).to include("Area must be other than 1")
+          expect(@tweet.errors.full_messages).to include('Area must be other than 1')
         end
       end
     end

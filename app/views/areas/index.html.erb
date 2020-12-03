@@ -1,0 +1,52 @@
+<main class="main">
+	<div class="top-image">
+		<h1>継承される旅の思い出</h1>
+	</div>
+  <div class="inner">
+    <div class="card__wrapper">
+      <ul class="area_list">
+        <li class="list">
+          <%= link_to image_tag( "/images/hokkaido.jpg", class: :area__img ), tweets_path(name: "hokkaido") %>
+          <%= link_to  '北海道', tweets_path, class: "area_title" %>
+        </li>
+        <li class="list">
+          <%= link_to image_tag( "/images/tohoku.jpg", class: :area__img ), tweets_path(name: "tohoku") %>
+          <%= link_to  '東北', tweets_path(name: "tohoku"), class: "area_title" %>
+        </li>
+        <li class="list">
+          <%= link_to image_tag( "/images/kanto.jpg", class: :area__img ), tweets_path(name: "kanto") %>
+          <%= link_to  '関東', tweets_path(name: "kanto"), class: "area_title" %>
+        </li>
+      </ul>
+      <ul class="area_list">
+        <li class="list">
+          <%= link_to image_tag( "/images/kanazawa.jpg", class: :area__img ), tweets_path(name: "toukai_hokuriku") %>
+          <%= link_to  '中部東海・北陸', tweets_path(name: "toukai_hokuriku"), class: "area_title" %>
+        </li>
+        <li class="list">
+          <%= link_to image_tag( "/images/osaka.jpg", class: :area__img ), tweets_path(name: "kinki") %>
+          <%= link_to  '近畿', tweets_path(name: "kinki"), class: "area_title" %>
+        </li>
+        <li class="list">
+          <%= link_to image_tag( "/images/hiroshima.jpg", class: :area__img ), tweets_path(name: "tyugoku_shikoku") %>
+          <%= link_to  '中国・四国', tweets_path(name: "tyugoku_shikoku"), class: "area_title" %>
+        </li>
+      </ul>
+      <ul class="area_list">
+        <li class="list">
+          <%= link_to image_tag( "/images/kyusyu.jpg", class: :area__img ), tweets_path(name: "kyusyu") %>
+          <%= link_to  '九州', tweets_path(name: "kyusyu"), class: "area_title" %>
+        </li>
+        <li class="list">
+          <%= link_to image_tag( "/images/okinawa.jpg", class: :area__img ), tweets_path(name: "okinawa") %>
+          <%= link_to  '沖縄', tweets_path(name: "okinawa"), class: "area_title" %>
+        </li>
+        <li class="list">
+          <%= link_to image_tag( "/images/singapore.jpg", class: :area__img ), tweets_path(name: "kaigai") %>
+          <%= link_to  '海外', tweets_path(name: "kaigai"), class: "area_title" %>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</main>

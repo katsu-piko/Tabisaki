@@ -9,7 +9,7 @@ Tabisakiは、旅行先を探しながら、実際に旅行へ行った方のア
 
 # URL
 
-URL: http://52.192.40.232/
+URL: https://tabisaki.site/
 
 ### テスト用アカウント
 
@@ -90,7 +90,7 @@ URL: http://52.192.40.232/
 
 ### 本番環境
 
-- AWS (EC2,S3)
+- AWS (VPC,EC2,S3,Route53、ACM、ALB)
 - Nginx、Unicorn、MariaDB
 
 

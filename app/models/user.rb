@@ -5,4 +5,10 @@ class User < ApplicationRecord
   has_many :tweets
 
   validates :nickname, presence: true, length: { maximum: 6 }
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com', nickname: '閲覧用') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
 end

@@ -1,27 +1,9 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :set_area, only: [:index]
 
   def index
-    if params[:name] == 'hokkaido'
-      @tweets = Tweet.where(area_id: 2)
-    elsif params[:name] == 'tohoku'
-      @tweets = Tweet.where(area_id: 3..8)
-    elsif params[:name] == 'kanto'
-      @tweets = Tweet.where(area_id: 9..15)
-    elsif params[:name] == 'toukai_hokuriku'
-      @tweets = Tweet.where(area_id: 16..25)
-    elsif params[:name] == 'kinki'
-      @tweets = Tweet.where(area_id: 26..31)
-    elsif params[:name] == 'tyugoku_shikoku'
-      @tweets = Tweet.where(area_id: 32..40)
-    elsif params[:name] == 'kyusyu'
-      @tweets = Tweet.where(area_id: 41..47)
-    elsif params[:name] == 'okinawa'
-      @tweets = Tweet.where(area_id: 48)
-    else params[:name] == 'kaigai'
-         @tweets = Tweet.where(area_id: 49)
-    end
   end
 
   def new
@@ -64,5 +46,27 @@ class TweetsController < ApplicationController
 
   def set_tweet
     @tweet = Tweet.find(params[:id])
+  end
+
+  def set_area
+    if params[:name] == 'hokkaido'
+      @tweets = Tweet.where(area_id: 2)
+    elsif params[:name] == 'tohoku'
+      @tweets = Tweet.where(area_id: 3..8)
+    elsif params[:name] == 'kanto'
+      @tweets = Tweet.where(area_id: 9..15)
+    elsif params[:name] == 'toukai_hokuriku'
+      @tweets = Tweet.where(area_id: 16..25)
+    elsif params[:name] == 'kinki'
+      @tweets = Tweet.where(area_id: 26..31)
+    elsif params[:name] == 'tyugoku_shikoku'
+      @tweets = Tweet.where(area_id: 32..40)
+    elsif params[:name] == 'kyusyu'
+      @tweets = Tweet.where(area_id: 41..47)
+    elsif params[:name] == 'okinawa'
+      @tweets = Tweet.where(area_id: 48)
+    else params[:name] == 'kaigai'
+         @tweets = Tweet.where(area_id: 49)
+    end
   end
 end

@@ -3,6 +3,7 @@ class Tweet < ApplicationRecord
   belongs_to_active_hash :area
 
   belongs_to :user
+  has_many :favorites
   has_one_attached :image
 
   with_options presence: true do

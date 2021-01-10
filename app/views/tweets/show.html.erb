@@ -17,7 +17,15 @@
             <%= link_to "削除する", tweet_path(@tweet.id), method: :delete, class: :tweet__btn %>
           </div>
         <% end %>
-        <div class="prototype__body">
+        <% if user_signed_in? %>
+          <% if @tweet.favorited_by?(current_user) %> <!-- ログインしているユーザーがいいねしたかどうかで分岐 -->
+            <p><span>いいね解除: </span><%=link_to @tweet.favorites.count, tweet_favorites_path(@tweet.id), method: :delete %></p>
+          <% else %>
+            <p><span>いいね: </span><%=link_to @tweet.favorites.count, tweet_favorites_path(@tweet.id), method: :post %></p>
+          <% end %>
+        <% else %>
+          <p><span>いいね数: </span><%= @tweet.favorites.count %></p>
+        <% end %>
         <div class="tweet__detail">
             <p class="detail__title">〜投稿者〜</p>
             <%= link_to @tweet.user.nickname, user_path(@tweet.user_id), class: :tweet__user %>

@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :tweets
   has_many :favorites
+  has_many :favorite_tweets, through: :favorites, source: :tweet
 
   validates :nickname, presence: true, length: { maximum: 6 }
 

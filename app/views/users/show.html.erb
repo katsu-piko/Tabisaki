@@ -9,6 +9,14 @@
           <%= render partial: 'tweets/tweet', collection: @user.tweets %>
         </div>
       </div>
+      <div class="user__wrapper">
+        <h2 class="page-heading">
+          <%= "#{@user.nickname}さんがいいねした投稿"%>
+        </h2>
+        <div class="user__card">
+          <%= render partial: 'tweets/tweet', collection: @favorite_tweets %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

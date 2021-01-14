@@ -4,14 +4,10 @@
     <%= link_to "< #{tweet.spot} >", tweet_path(tweet.id), class: :card__title%>
     <%= link_to "( #{tweet.area.name} )", tweet_path(tweet.id), class: :card__area%>
     <%= link_to "投稿者： #{tweet.user.nickname}", user_path(tweet.user_id), class: :card__user %>
-    <% if user_signed_in? %>
-      <% if tweet.favorited_by?(current_user) %> <!-- ログインしているユーザーがいいねしたかどうかで分岐 -->
-        <p><span>いいね解除: </span><%=link_to tweet.favorites.count, tweet_favorites_path(tweet.id), method: :delete %></p>
-      <% else %>
-        <p><span>いいね: </span><%=link_to tweet.favorites.count, tweet_favorites_path(tweet.id), method: :post %></p>
-      <% end %>
-    <% else %>
-      <p><span>いいね数: </span><%= tweet.favorites.count %></p>
-    <% end %>
+
+    <div id="fav_buttons_<%= tweet.id %>">
+      <%= render partial: 'favorites/favorite', locals: { tweet: tweet} %>
+    </div>
+
   </div>
 </div>

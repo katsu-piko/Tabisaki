@@ -4,5 +4,10 @@
     <%= link_to "< #{tweet.spot} >", tweet_path(tweet.id), class: :card__title%>
     <%= link_to "( #{tweet.area.name} )", tweet_path(tweet.id), class: :card__area%>
     <%= link_to "投稿者： #{tweet.user.nickname}", user_path(tweet.user_id), class: :card__user %>
+
+    <div id="fav_buttons_<%= tweet.id %>">
+      <%= render partial: 'favorites/favorite', locals: { tweet: tweet} %>
+    </div>
+
   </div>
 </div>

@@ -17,7 +17,9 @@
             <%= link_to "削除する", tweet_path(@tweet.id), method: :delete, class: :tweet__btn %>
           </div>
         <% end %>
-        <div class="prototype__body">
+        <div id="fav_buttons_<%= @tweet.id %>">
+          <%= render partial: 'favorites/favorite', locals: { tweet: @tweet} %>
+        </div>
         <div class="tweet__detail">
             <p class="detail__title">〜投稿者〜</p>
             <%= link_to @tweet.user.nickname, user_path(@tweet.user_id), class: :tweet__user %>
